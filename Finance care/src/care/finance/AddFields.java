@@ -16,7 +16,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.*;
-
+ // class
+// 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
 public class AddFields {
 
 	// Functions for Client Entry frames
