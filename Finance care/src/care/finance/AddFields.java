@@ -1,11 +1,21 @@
 package care.finance;
 
-import javax.swing.*;
-import javax.swing.border.Border;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextArea;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.*;
-import java.math.RoundingMode;
 
 public class AddFields {
 

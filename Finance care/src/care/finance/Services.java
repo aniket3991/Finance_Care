@@ -14,7 +14,7 @@ public class Services {
 	JPanel panel;
 	public static Font font = new Font("The Times Roman", Font.BOLD, 16);
 
-	String[] service = { "Client Entry", "Income Tax", "GST", "PAN", "Other Services", "View Details" };
+	String[] service = { "Client Entry", "Income Tax" };
 
 	Services() {
 		JFrame frame = new JFrame();
@@ -56,21 +56,6 @@ public class Services {
 
 				else if (button.getText() == "Income Tax") {
 					new IncomeTax();
-					frame.dispose();
-				} else if (button.getText() == "GST") {
-					new GST();
-					frame.dispose();
-
-				} else if (button.getText() == "PAN") {
-					new PAN();
-					frame.dispose();
-
-				} else if (button.getText() == "Other Services") {
-					new OtherServices();
-					frame.dispose();
-
-				} else if (button.getText() == "View Details") {
-					new ViewDetails();
 					frame.dispose();
 				} else {
 					// JOptionPane op = new JOptionPane();

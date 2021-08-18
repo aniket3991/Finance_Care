@@ -21,7 +21,7 @@ public class IncomeTax implements ActionListener {
 
 	String[] itrandaudit = { "ITR", "Audit" };
 	String[] searchitem = { "Select", "NAME", "PANCARD", "DOB", "AADHAR" };
-	String[] buttons = { "Client Entry", "GST", "PAN", "Other Services", "View Details" };
+	String[] buttons = { "Client Entry" };
 	static String[] paymentfields = { "ITR", "Audit", "Tax", "Others", "All Total" };
 	static String[] msg = new String[2];
 	static String selectedyear;
@@ -115,7 +115,7 @@ public class IncomeTax implements ActionListener {
 			}
 		});
 
-		@SuppressWarnings("unchecked")
+		//@SuppressWarnings("unchecked")
 		JPanel itrauditpanel = AddFields.addIncomeTaxField(itrandaudit, done_due, msg, frame);
 		itrauditpanel.setBounds(20, 150, 700, 80);
 		itrauditpanel.setBackground(new Color(0xffffff));

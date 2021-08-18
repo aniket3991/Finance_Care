@@ -1,10 +1,19 @@
 package care.finance;
 
-import java.sql.*;
-import javax.swing.*;
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
-import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
-import com.mysql.jdbc.MysqlDataTruncation;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import com.mysql.cj.jdbc.exceptions.MysqlDataTruncation;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.SQLSyntaxErrorException;
+import java.sql.Statement;
 
 public class SQLQuery {
 
@@ -77,7 +86,7 @@ public class SQLQuery {
 			JOptionPane.showMessageDialog(null, "Saved Successfully");
 			Main.setAsRestart();
 
-		} catch (MySQLIntegrityConstraintViolationException e) {
+		} catch (SQLIntegrityConstraintViolationException e) {
 			if (textstring[0] == null || textstring[3] == null || textstring[4] == null || textstring[5] == null) {
 				JOptionPane.showMessageDialog(null, "Name,PAN,DOB,Aadhar must be filled");
 			} else {
@@ -118,7 +127,7 @@ public class SQLQuery {
 					}
 				} while (rs.next());
 			}
-		} catch (MySQLSyntaxErrorException searchtype) {
+		} catch (SQLSyntaxErrorException searchtype) {
 			JOptionPane.showMessageDialog(null, "Please select search type");
 			Main.savebutton.setEnabled(true);
 			Main.updatebutton.setEnabled(false);
@@ -148,7 +157,7 @@ public class SQLQuery {
 				} else {
 					if (i == 0 || i == 3 || i == 4 || i == 5) {
 						if (textfield[i].getText().isBlank())
-							throw new MySQLIntegrityConstraintViolationException();
+							throw new SQLIntegrityConstraintViolationException();
 					}
 					ps.setString(i + 1, textfield[j].getText());
 					j++;
@@ -169,7 +178,7 @@ public class SQLQuery {
 			JOptionPane.showMessageDialog(null, "Successfully Updated!");
 		} catch (MysqlDataTruncation ex) {
 			JOptionPane.showMessageDialog(null, "Check Data Carefully");
-		} catch (MySQLIntegrityConstraintViolationException ex) {
+		} catch (SQLIntegrityConstraintViolationException ex) {
 			JOptionPane.showMessageDialog(null, "Name,PAN,DOB,Aadhar must be filled");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -246,7 +255,7 @@ public class SQLQuery {
 			connection.close();
 			JOptionPane.showMessageDialog(null, "Saved Successfully");
 			IncomeTax.setAsRestart();
-		} catch (MySQLIntegrityConstraintViolationException sameyear) {
+		} catch (SQLIntegrityConstraintViolationException sameyear) {
 			if (fytext == null)
 				JOptionPane.showMessageDialog(null, "New Entry for Financial Year must be filled");
 			else if (pancardtext == null)

@@ -1,10 +1,18 @@
 package care.finance;
 
-import java.sql.*;
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import java.awt.Dimension;
+import java.awt.GridLayout;
+
+import java.sql.Connection;
 import java.sql.DriverManager;
-import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
+import java.sql.PreparedStatement;
+import java.sql.SQLSyntaxErrorException;
 
 public class DBConnection {
 
@@ -14,7 +22,7 @@ public class DBConnection {
 	static JTextField usernametext;
 	static JPasswordField passwordtext;
 	static String DBName;
-	static String jdbcDriver = "com.mysql.jdbc.Driver";
+	static String jdbcDriver = "com.mysql.cj.jdbc.Driver";
 	static String url = "jdbc:mysql://localhost:3306/";
 
 	public static void createDatabase() throws Exception {
@@ -53,7 +61,7 @@ public class DBConnection {
 				setup();
 			Class.forName(jdbcDriver);
 			connection = DriverManager.getConnection(url + "FINANCECARE", username, password);
-		} catch (MySQLSyntaxErrorException e) {
+		} catch (SQLSyntaxErrorException e) {
 			try {
 				JOptionPane.showMessageDialog(null, "Database not found\nDatabase Created ;)\nPress OK and try again");
 				createDatabase();

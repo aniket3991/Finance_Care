@@ -1,9 +1,11 @@
 package care.finance;
 
+import java.awt.Color;
 import java.awt.Font;
-import java.awt.*;
 
-import javax.swing.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JWindow;
 
 public class WelcomeScreen extends JWindow {
 	

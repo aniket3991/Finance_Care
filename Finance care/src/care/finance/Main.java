@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 class Main implements ActionListener {
 	String[] details = { "Name :", "Contact No. :", "Address :", "PAN Card No. :", "DOB(dd-mm-yyyy)", "Aadhar No. :",
 			"GSTIN :", "GST ID :", "GST Password :", "E-mail :", "Password :" };
-	String[] sidebuttons = { "Income Tax", "GST", "PAN", "Other Services", "View Details" };
+	String[] sidebuttons = { "Income Tax" };
 	String[] searchitems = { "Select", "NAME", "PANCARD", "DOB", "AADHAR" };
 	String oldpancard;
 	static JTextField[] textfield = new JTextField[9];
@@ -137,7 +137,8 @@ class Main implements ActionListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		new WelcomeScreen();
 		new Main();
 	}
 
