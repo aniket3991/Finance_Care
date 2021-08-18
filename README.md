@@ -5,6 +5,6 @@ It is a client management app for a specific shop which is Finance Care
 ### Backend - MySql
 
 ## Requirements
-JDK 8
+JDK 16
 
 mysql-connector-java-8.0.25.jar
