@@ -9,4 +9,4 @@ JDK 16
 
 mysql-connector-java-8.0.25.jar
 
-Netbeans 12.4
+Eclipse 4.20
